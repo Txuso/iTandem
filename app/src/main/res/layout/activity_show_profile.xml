@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.josurubio.itandem.ShowProfile"
+    android:background="#ffffffff">
+
+    <Button
+        android:id="@+id/foundUserPic"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/t1nameAge"
+        android:layout_alignBottom="@+id/foundUserPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:paddingBottom="5dp"
+        android:textColor="#ffffffff"
+        android:paddingLeft="10dp"
+        android:background="#9e000000"
+        android:textAlignment="center"
+        android:paddingRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/languages_I_want_to_learn"
+        android:id="@+id/t2langIlearnText"
+        android:textColor="#ff161616"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="100dp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/languages_I_speak"
+        android:id="@+id/t3langISpeak"
+        android:layout_above="@+id/t2langIlearnText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff000000"
+        android:textSize="20sp"
+        android:paddingBottom="40dp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- "
+        android:id="@+id/t4knownLang"
+        android:layout_above="@+id/t2langIlearnText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff848484"
+        android:textSize="16sp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- "
+        android:id="@+id/t5"
+        android:textColor="#ff848484"
+        android:textSize="16sp"
+        android:paddingBottom="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_me"
+        android:id="@+id/t6Extract"
+        android:textColor="#ff161616"
+        android:textSize="20sp"
+        android:paddingBottom="85dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- "
+        android:id="@+id/t7extractcontent"
+        android:textColor="#ff848484"
+        android:textSize="16sp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="20dp"
+        android:layout_alignBottom="@+id/t5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="5dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_message"
+        android:id="@+id/tandemButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
+
+</RelativeLayout>

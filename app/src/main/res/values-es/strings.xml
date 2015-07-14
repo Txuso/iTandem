@@ -1,0 +1,61 @@
+<resources>
+
+    <string name="I_want_to_find">Quiero buscar...</string>
+    <string name="find_tandem">Buscar Tandem</string>
+    <string name="title_activity_find_tandem">Buscar Tandem</string>
+    <string name="title_activity_tandem_place">Espacios Tandem</string>
+    <string name="title_activity_message">Mensajes</string>
+    <string-array name="nav_options">
+        <item>Mis Preferencias Tandem</item>
+        <item>Compartir iTandem</item>
+        <item>Logout</item>
+
+    </string-array>
+
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_my_profile">Mi Perfil</string>
+    <string name="title_activity_my_preferences">Mis Preferencias</string>
+    <string name="title_activity_share_itandem">Compartir iTandem</string>
+    <string name="tandem_distance">Distancia Tandem: </string>
+    <string name="km">Km</string>
+    <string name="save_changes">Guardar Cambios</string>
+    <string name="languages_I_speak">Idiomas que hablo...</string>
+    <string name="languages_I_want_to_learn">Idiomas que voy a aprender...</string>
+    <string name="about_me">Sobre Mi:</string>
+    <string name="send_message">Enviar Mensaje</string>
+    <string name="create_tandem_place">Crear un Espacio Tandem</string>
+    <string name="find_tandem_place">Buscar un Espacio Tandem</string>
+
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
+    <string name="basque">Vasco</string>
+    <string name="italian">Italiano</string>
+    <string name="french">Francés</string>
+    <string name="catalan">Catalán</string>
+    <string name="name">nombre</string>
+
+    <string name="I_speak">Hablo: </string>
+    <string name="I_want_to_learn">Quiero hablar: </string>
+
+    <string name="you_will_find_encounters">Se buscarán encuentros Tandem en </string>
+    <string name="you_will_find_encounters_in_your_current_location">tu ubicación actual</string>
+    <string name="repeated_encounter">Ya tienes un encuentro con </string>
+
+    <string name="where">¿Dónde?</string>
+    <string name="go_button">Ir</string>
+
+    <string name="tandem_place_title">TÍTULO DEL TANDEM PLACE</string>
+
+    <string name="tandem_place_description">DESCRIPCIÓN</string>
+    <string name="tandem_place_when">CUANDO Y FRECUENCIA</string>
+    <string name="tandem_place_create">CREAR ESPACIO TANDEM</string>
+    <string name="where_find_tandem">¿Dónde quieres encontrar Encuentros Tandem?</string>
+    <string name="use_my_location">Usar Localización Actual</string>
+
+    <string name="latitude_longitude_null">Enciende el GPS en tu dispositivo y ve a tu perfil para actualizar tus coordenadas</string>
+    <string name="choose_language_try_again">Elige algún idioma e inténtalo de nuevo</string>
+    <string name="Join_Tandem_Place">Unirse al grupo</string>
+    <string name="number_of_members">PARTICIPANTES</string>
+
+
+</resources>

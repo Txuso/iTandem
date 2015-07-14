@@ -1,0 +1,6 @@
+<root>
+  <item
+      name='com.facebook.Request com.facebook.RequestAsyncTask executeMeRequestAsync(com.facebook.Session, com.facebook.Request.GraphUserCallback)'>
+    <annotation name='java.lang.annotation.Deprecated' />
+  </item>
+</root>

@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.josurubio.itandem.MyProfile"
+    android:background="#ffffffff">
+
+    <ImageButton
+        android:id="@+id/profilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+
+    <TextView
+        android:id="@+id/nameAge"
+        android:layout_alignBottom="@+id/profilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:paddingBottom="5dp"
+        android:textColor="#ffffffff"
+        android:paddingLeft="10dp"
+        android:background="#8c000000"
+        android:textAlignment="center"
+        android:paddingRight="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/languages_I_want_to_learn"
+        android:id="@+id/textView4"
+        android:textColor="#ff161616"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="85dp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/languages_I_speak"
+        android:id="@+id/textView"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff000000"
+        android:textSize="20dp"
+        android:paddingBottom="40dp"
+        android:paddingLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- "
+        android:id="@+id/knownlang"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff848484"
+        android:textSize="16dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- "
+        android:id="@+id/langLearn"
+        android:textColor="#ff848484"
+        android:textSize="16dp"
+        android:paddingBottom="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_me"
+        android:id="@+id/extract"
+        android:textColor="#ff161616"
+        android:textSize="20dp"
+        android:paddingBottom="85dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- "
+        android:id="@+id/extractContent"
+        android:textColor="#ff848484"
+        android:textSize="16dp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="20dp"
+        android:layout_alignBottom="@+id/langLearn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonSpeak"
+        android:background="@android:drawable/ic_input_add"
+        android:layout_below="@+id/profilePic"
+        android:layout_alignLeft="@+id/buttonLearn"
+        android:layout_alignStart="@+id/buttonLearn" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonLearn"
+        android:background="@android:drawable/ic_input_add"
+        android:paddingLeft="50dp"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonExtract"
+        android:background="@android:drawable/ic_menu_edit"
+        android:layout_alignTop="@+id/extractContent"
+        android:layout_alignRight="@+id/buttonLearn"
+        android:layout_alignEnd="@+id/buttonLearn"
+        android:layout_marginTop="-38dp" />
+
+
+</RelativeLayout>

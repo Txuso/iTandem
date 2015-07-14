@@ -1,0 +1,67 @@
+<resources>
+
+    <string name="I_want_to_find">Bilatu nahi dut...</string>
+    <string name="find_tandem">Tandem Bilatu</string>
+    <string name="title_activity_find_tandem">Tandem Bilatu</string>
+    <string name="title_activity_tandem_place">Tandem Lekuak</string>
+    <string name="title_activity_message">Mezuak</string>
+    <string-array name="nav_options">
+        <item>Nire Tandem Lehentasunak</item>
+        <item>iTandem Banatu</item>
+        <item>Logout</item>
+    </string-array>
+
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_my_profile">Nire Profila</string>
+    <string name="title_activity_my_preferences">Nire Lehenatasunak</string>
+    <string name="title_activity_share_itandem">iTandem Banatu</string>
+    <string name="tandem_distance">Tandem Distantzia: </string>
+    <string name="km">Km-tan</string>
+    <string name="save_changes">Aldaketak Gorde</string>
+    <string name="languages_I_speak">Hitz egiten dut...</string>
+    <string name="languages_I_want_to_learn">Hitz egin nahiko nuke...</string>
+    <string name="about_me">Niri Buruz:</string>
+    <string name="send_message">Mezua Bidali</string>
+    <string name="create_tandem_place">Tandem Lekua Sortu</string>
+    <string name="find_tandem_place">Tandem Lekua Bilatu</string>
+
+    <string name="spanish">Gaztelera</string>
+    <string name="english">Ingelesa</string>
+    <string name="basque">Euskera</string>
+    <string name="italian">Italiera</string>
+    <string name="french">Frantsesa</string>
+    <string name="catalan">Catalana</string>
+    <string name="name">izena</string>
+
+    <string name="I_speak">Hitz egiten dut: </string>
+    <string name="I_want_to_learn">Hitz egin nahi dut: </string>
+
+    <string name="you_will_find_encounters">Tandem topaketak aurkituko dituzu </string>
+    <string name="you_will_find_encounters_in_your_current_location">zure kokapenean</string>
+
+
+    <string name="where">Non?</string>
+    <string name="go_button">Joan!</string>
+
+    <string name="tandem_place_title">TANDEM LEKUAREN IZENA</string>
+
+    <string name="tandem_place_description">DESKRIPZIOA</string>
+
+    <string name="tandem_place_when">NOIZ ETA ZEIN FREKUENTZIAREKIN?</string>
+
+    <string name="tandem_place_create">TANDEM LEKUA SORTU</string>
+
+    <string name="where_find_tandem">Non aurkitu nahi dituzu Tandem Topaketak?</string>
+
+    <string name="use_my_location">Nire Kokapena Erabili</string>
+    <string name="latitude_longitude_null">GPS piztu zure mugikorrean eta perfilera jo kokapena eguneratzeko</string>
+    <string name="choose_language_try_again">Hizkuntzaren bat aukeratu eta berriz saiatu</string>
+
+    <string name="Join_Tandem_Place">Taldean Sartu</string>
+    <string name="repeated_encounter">Badaukazu jada topaketa pertsona honekin: </string>
+    <string name="number_of_members">PARTAIDEAK</string>
+
+
+
+
+</resources>

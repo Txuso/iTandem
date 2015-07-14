@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4f4f4"
+    android:id="@+id/findTandemPlace">
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="250dp" android:id="@+id/map"
+    tools:context="com.example.josurubio.itandem.FindTandemPlace"
+    android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchPlaceEdit2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:text="@string/where"
+        android:selectAllOnFocus="true"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tandemPlaceTitleText2"
+        android:layout_below="@+id/map"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="@string/tandem_place_title"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tandemPlaceTitle2"
+        android:layout_below="@+id/tandemPlaceTitleText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tandemPlace_description_text2"
+        android:textColor="@android:color/black"
+        android:textSize="16dp"
+        android:layout_below="@+id/tandemPlaceTitle2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/tandem_place_description"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tandemPlaceDescription2"
+        android:layout_below="@+id/tandemPlace_description_text2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/whenFrecuency2"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:layout_below="@+id/tandemPlaceDescription2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/tandem_place_when"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/whenFrecuencytext2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/whenFrecuency2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@android:color/black" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goButton2"
+        android:text="@string/go_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/searchPlaceEdit2"
+        android:singleLine="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/joinTandemGroupButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/goButton2"
+        android:layout_alignEnd="@+id/goButton2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/Join_Tandem_Place" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberMembers"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="@string/number_of_members"
+        android:textStyle="bold"
+        android:layout_below="@+id/whenFrecuencytext2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberMemberText"
+        android:layout_below="@+id/numberMembers"
+        android:layout_alignLeft="@+id/joinTandemGroupButton"
+        android:layout_alignStart="@+id/joinTandemGroupButton"
+        android:layout_above="@+id/joinTandemGroupButton"
+        android:layout_alignRight="@+id/joinTandemGroupButton"
+        android:layout_alignEnd="@+id/joinTandemGroupButton"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>

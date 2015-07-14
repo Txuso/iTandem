@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/find"
+    tools:context="com.example.josurubio.itandem.FindTandem"
+    android:background="#00ffffff">
+
+    <ListView
+        android:id="@+id/kakakaka"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="10.0sp"
+        android:background="#ff2082b1"
+        android:choiceMode="singleChoice"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="150dp"
+        >
+
+    </ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/I_want_to_find"
+        android:id="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="18sp"
+        android:textColor="@android:color/black" />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/find_tandem"
+        android:id="@+id/findTandemButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/kakakaka"
+        android:layout_alignEnd="@+id/kakakaka" />
+
+
+</RelativeLayout>
