@@ -21,7 +21,6 @@ public  class imageManager {
         immagex.compress(Bitmap.CompressFormat.JPEG,80, baos);
         byte[] b = baos.toByteArray();
         String imageEncoded = Base64.encodeToString(b, Base64.DEFAULT);
-        String imageEncoded2 = Base64.encodeToString(b, Base64.DEFAULT);
 
         return imageEncoded;
     }
