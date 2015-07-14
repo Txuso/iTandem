@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.firebase.client.Firebase;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -80,15 +82,18 @@ public class CreateTandemPlace extends FragmentActivity{
         createB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //We include the current user into the participants
-                HashMap<String,Boolean > participants = new HashMap<String, Boolean>();
-                participants.put(creatroID, true);
-                //We create the Tandem Place adding it to the Firebase Reference and we close the activity
-                TandemPlaceClass tp = new TandemPlaceClass(creatroID, title.getText().toString(), description.getText().toString(),
-                        when.getText().toString(), latitude, longitude, participants);
-                tandemPlaceRef.push().setValue(tp);
-                finish();
-
+                if (title.getText().toString().equals("")||description.getText().toString().equals("") || when.getText().toString().equals(""))
+                    Toast.makeText(getApplicationContext(), getString(R.string.empty_fields_notification), Toast.LENGTH_SHORT).show();
+                else {
+                    //We include the current user into the participants
+                    HashMap<String, Boolean> participants = new HashMap<String, Boolean>();
+                    participants.put(creatroID, true);
+                    //We create the Tandem Place adding it to the Firebase Reference and we close the activity
+                    TandemPlaceClass tp = new TandemPlaceClass(creatroID, title.getText().toString(), description.getText().toString(),
+                            when.getText().toString(), latitude, longitude, participants);
+                    tandemPlaceRef.push().setValue(tp);
+                    finish();
+                }
             }
         });
 
@@ -103,7 +108,6 @@ public class CreateTandemPlace extends FragmentActivity{
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
      * installed) and the map has not already been instantiated.. This will ensure that we only ever
-     * call {@link #setUpMap()} once when {@link #mMap} is not null.
      * <p/>
      * If it isn't installed {@link SupportMapFragment} (and
      * {@link com.google.android.gms.maps.MapView MapView}) will show a prompt for the user to
@@ -140,19 +144,5 @@ public class CreateTandemPlace extends FragmentActivity{
             }
         }
     }
-
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
-    private void setUpMap() {
-
-    }
-    /** A method to download json data from url */
-
-
-
 
 }

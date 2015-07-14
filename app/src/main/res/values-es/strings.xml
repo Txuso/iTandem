@@ -56,6 +56,9 @@
     <string name="choose_language_try_again">Elige algún idioma e inténtalo de nuevo</string>
     <string name="Join_Tandem_Place">Unirse al grupo</string>
     <string name="number_of_members">PARTICIPANTES</string>
+    <string name="empty_fields_notification">Hay campos vacíos. Compruébalos e inténtalo de nuevo</string>
+    <string name="new_message_notification">Tienes un nuevo mensaje de </string>
+    <string name="new_message_click_notification">"Haz click para verlo"</string>
 
 
 </resources>

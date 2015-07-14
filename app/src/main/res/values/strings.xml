@@ -90,5 +90,9 @@
     <string name="choose_language_try_again">Choose a language to find and try again</string>
     <string name="title_activity_jsdbfkjsdbf">Map11111</string>
     <string name="title_activity_tandem_place_messages">TandemPlaceMessages</string>
+    <string name="empty_fields_notification">There are empty fields. Check them and try again</string>
+    <string name="new_message_notification">You have a new Tandem Message from </string>
+    <string name="new_message_click_notification">"Click here to see the message"</string>
+
 
 </resources>

@@ -11,20 +11,11 @@ public class Chat {
     private String authorID;
     private String date;
 
-
-
-    // Required default constructor for Firebase object mapping
-    @SuppressWarnings("unused")
-     Chat() {
-
-    }
-
     public Chat(String message, String author, String authorID, String date) {
         this.message = message;
         this.author = author;
         this.authorID = authorID;
         this.date = date;
-
     }
 
     public String getMessage() {

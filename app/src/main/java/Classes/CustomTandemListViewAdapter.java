@@ -17,6 +17,7 @@ import com.example.josurubio.itandem.R;
 
 /**
  * Created by josurubio on 08/04/15.
+ * Custom adapter when listing found users
  */
 public class CustomTandemListViewAdapter extends ArrayAdapter<TandemListRowItem> {
 

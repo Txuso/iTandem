@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 /**
  * Created by Txuso on 27/5/15.
+ * Tandem Place class
  */
 public class TandemPlaceClass {
 

@@ -16,9 +16,10 @@ import com.example.josurubio.itandem.R;
 
 /**
  * Created by josurubio on 05/04/15.
+ * Custom Adapter for the language list
  */
-public class CustomAdapter extends ArrayAdapter {
 
+public class CustomAdapter extends ArrayAdapter {
         Model[] modelItems = null;
         Context context;
 public CustomAdapter(Context context, Model[] resource) {

@@ -4,8 +4,11 @@ package Classes;
  * Created by josurubio on 05/04/15.
  */
 public class Model {
+
+    //The language list model class
+
     String name;
-    int value;/* 0 -&gt; checkbox disable, 1 -&gt; checkbox enable */
+    int value;
     String id;
     public Model(String name, int value, String id){
         this.name = name;

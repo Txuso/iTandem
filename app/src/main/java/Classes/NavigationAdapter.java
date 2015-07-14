@@ -18,6 +18,8 @@ import java.util.Objects;
 /**
  * Created by josurubio on 17/03/15.
  */
+
+// Navigation Drawer Adapter
 public class NavigationAdapter extends BaseAdapter {
     private Activity activity;
     ArrayList<ItemObject> arrayitms;

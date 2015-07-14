@@ -36,7 +36,6 @@ public class ProfileEditInfo extends Activity{
     String lang = "";
     int i = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +48,11 @@ public class ProfileEditInfo extends Activity{
 
         inf = (TextView)findViewById(R.id.textView7);
         inf.setVisibility(View.INVISIBLE);
-
-
         final Bundle extras = getIntent().getExtras();
 
         final Firebase tandemRef = new Firebase("https://blazing-fire-2203.firebaseio.com");
         final String newID = extras.getString("testID");
         final int menu = extras.getInt("kind");
-
 
         if (menu == 0 || menu == 1){
 
@@ -141,7 +137,6 @@ public class ProfileEditInfo extends Activity{
                 }
                 finish();
 
-
             }
         });
 
@@ -186,7 +181,6 @@ public class ProfileEditInfo extends Activity{
             }
         }
     }
-
 
 
     @Override

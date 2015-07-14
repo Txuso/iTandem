@@ -41,8 +41,7 @@ import Classes.imageManager;
 
 
 public class MyProfile extends Activity {
-    private ActionBarDrawerToggle toggle;
-    //private DrawerLayout drawerLayout;
+
     ArrayList<String> langKnown = new ArrayList<String>();
     ArrayList<String> langLearn = new ArrayList<String>();
     ImageButton im;
@@ -62,14 +61,9 @@ public class MyProfile extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
         this.setTitle("My Profile");
-        //Extra data
         extras = getIntent().getExtras();
-
         getActionBar().setDisplayHomeAsUpEnabled(true);
-
         getActionBar().setBackgroundDrawable(new ColorDrawable(0xff2082b1));
-
-
         final Button langKnow = (Button) findViewById(R.id.buttonSpeak);
         Button langLearn = (Button) findViewById(R.id.buttonLearn);
         Button extractButton = (Button) findViewById(R.id.buttonExtract);
@@ -84,13 +78,8 @@ public class MyProfile extends Activity {
 
         tandemUser.setName(extras.get("name").toString());
 
-
         //Test users
         Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.profileimage);
-        String imaggg = imageManager.encodeTobase64(bm);
-        ArrayList<String> langKnownArray = new ArrayList<String>();
-        ArrayList<String>langLearnArray = new ArrayList<String>();
-
         mFirebaseRef = new Firebase("https://blazing-fire-2203.firebaseio.com/Tandem");
         languagesRef = new Firebase("https://blazing-fire-2203.firebaseio.com/Language");
 

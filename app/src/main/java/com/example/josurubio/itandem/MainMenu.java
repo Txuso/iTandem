@@ -50,11 +50,9 @@ public class MainMenu extends TabActivity implements AdapterView.OnItemClickList
     private TypedArray listIcons;
     NavigationAdapter navAdapter;
     Bundle extras;
-
-
     Intent findTIntent;
-    protected String latitude = "", longitude = "";
-
+    protected String latitude = "",
+    longitude = "";
     Firebase myFirebaseRef;
     TabHost.TabSpec findTSpec;
     int distanceTandem = 50;
@@ -65,14 +63,9 @@ public class MainMenu extends TabActivity implements AdapterView.OnItemClickList
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_main_menu);
         myFirebaseRef = new Firebase("https://blazing-fire-2203.firebaseio.com/Tandem");
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         listView = (ListView) findViewById(R.id.listView);
         myTBH = getTabHost();
-
-
-
-
 
         // we set the behaviour of the action bar when it's opened and closed
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.app_name, R.string.app_name) {
@@ -94,76 +87,6 @@ public class MainMenu extends TabActivity implements AdapterView.OnItemClickList
 
         //we declare the header that the list will use
         final View header = getLayoutInflater().inflate(R.layout.header, null);
-        /*
-        myFirebaseRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-               Map<String, Object> user = (Map<String, Object>) snapshot.child(extras.getString("id")).getValue();
-                //Bitmap pic = imageManager.getResizedBitmap(imageManager.decodeBase64(user.get("image").toString()),150,150);
-                String aaa = (String) user.get("name");
-                //BitmapDrawable ob = new BitmapDrawable(getResources(), pic);
-                //header.setBackground(ob);
-                Toast.makeText(getApplicationContext(), user.get("name").toString(), toast.LENGTH_SHORT).show();
-
-
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                System.out.println("The read failed: " + firebaseError.getMessage());
-            }
-        });
-        */
-/*
-        mFirebaseRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Map<String, Object> message = (Map<String, Object>) dataSnapshot.getValue();
-                if (message.get("receptorID").toString().equals(extras.getString("id").toString())){
-                    Toast.makeText(MainMenu.this, "Dentro aquiiii", Toast.LENGTH_SHORT).show();
-
-                    NotificationManager notiMan = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-
-                    Notification note = new Notification(R.drawable.profileimage, "You have a new Tandem Message from " + message.get("author"), System.currentTimeMillis());
-
-                    Intent launchAct = new Intent(MainMenu.this, ChatActivity.class);
-                    launchAct.putExtra("from", message.get("author").toString());
-                    launchAct.putExtra("to", message.get("receptor").toString());
-                    launchAct.putExtra("fromID", message.get("authorID").toString());
-                    launchAct.putExtra("toID", message.get("receptorID").toString());
-
-                    PendingIntent i = PendingIntent.getActivity(MainMenu.this, 0, launchAct,0);
-
-                    note.setLatestEventInfo(MainMenu.this, "You have a new Tandem Message from ", message.get("message").toString(), i);
-
-                    notiMan.notify(9999, note);
-
-                }
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-        */
-
 
         myFirebaseRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -238,8 +161,6 @@ public class MainMenu extends TabActivity implements AdapterView.OnItemClickList
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setBackgroundDrawable(new ColorDrawable(0xff2082b1));
 
-
-
         // we fill the tabhost with the different options of the menu
         findTSpec = myTBH.newTabSpec("FIND TANDEM");
         findTIntent = new Intent(this, FindTandem.class);
@@ -268,8 +189,6 @@ public class MainMenu extends TabActivity implements AdapterView.OnItemClickList
         messageSpec.setContent(messagesIntent);
         messageSpec.setIndicator(getString(R.string.title_activity_message));
 
-
-
         myTBH.addTab(findTSpec);
         myTBH.addTab(tandemPSpec);
         myTBH.addTab(messageSpec);
@@ -290,23 +209,6 @@ public class MainMenu extends TabActivity implements AdapterView.OnItemClickList
         return true;
     }
 
-    /*
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Logs 'install' and 'app activate' App Events.
-        AppEventsLogger.activateApp(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        // Logs 'app deactivate' App Event = to accurately track the time people spend in iTandem
-        AppEventsLogger.deactivateApp(this);
-    }
-    */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

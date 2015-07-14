@@ -126,8 +126,6 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
 
-
-
     }
 
 

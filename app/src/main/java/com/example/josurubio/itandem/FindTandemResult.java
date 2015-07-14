@@ -84,15 +84,10 @@ public class FindTandemResult extends Activity implements AdapterView.OnItemClic
 
                             float[] dist = new float[1];
 
-
-                           // Location.distanceBetween(latitude, longitude, latitude2, longitude2, dist);
                             double distance = distance(latitude,longitude, latitude2, longitude2, 'K');
 
                             //Here we check if the distance between the loged user and the found user is less than the discovery preferences criteria
                                 if (distance <= distanceTandem) {
-
-
-                                    //String imaPath = imageManager.encodeTobase64(pic);
 
                                     BitmapDrawable ima = new BitmapDrawable(picRounded);
                                     final TandemListRowItem item = new TandemListRowItem(ima, user.get("name") + " " + user.get("age"), sl, ll, snapshot.getKey());
@@ -157,101 +152,6 @@ public class FindTandemResult extends Activity implements AdapterView.OnItemClic
 
                 @Override
                 public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                    /*
-                    if (filters[0] != null){
-                        for (final DataSnapshot tan : dataSnapshot.getChildren()) {
-                            Map<String, Object> tande = (Map<String, Object>) dataSnapshot.getValue();
-
-                            if (dataSnapshot.getKey().equals(extra.getString("id"))) {
-                                distanceTandem = Integer.parseInt(tande.get("distance").toString());
-                                longitude = Double.parseDouble(tande.get("longitude").toString());
-                                latitude = Double.parseDouble(tande.get("latitude").toString());
-                            }
-
-                        }
-                        for (final DataSnapshot child : dataSnapshot.child("langKnown").getChildren()) {
-
-                            if (filters[0].equals(child.getKey())) {
-                                Map<String, Object> user = (Map<String, Object>) dataSnapshot.getValue();
-
-                                for (final DataSnapshot langLearn : dataSnapshot.child("langLearn").getChildren()) {
-                                    langLearnList.add(langLearn.getKey());
-
-
-                                }
-                                double latitude2 = Double.parseDouble(user.get("latitude").toString());
-                                double longitude2 = Double.parseDouble(user.get("longitude").toString());
-
-                                Bitmap pic = imageManager.getResizedBitmap(imageManager.decodeBase64(user.get("image").toString()), 80, 80);
-
-
-                                float[] dist = new float[1];
-
-                                    Location.distanceBetween(latitude, longitude, latitude2, longitude2, dist);
-                                    //Here we check if the distance between the loged user and the found user is less than the discovery preferences criteria
-                                    if (dist[0] / 1000 <= distanceTandem) {
-
-                                        //String imaPath = imageManager.encodeTobase64(pic);
-
-                                        BitmapDrawable ima = new BitmapDrawable(pic);
-                                        final TandemListRowItem item = new TandemListRowItem(ima, user.get("name") + " " + user.get("age"), sl, ll, dataSnapshot.getKey());
-
-                                        languagesRef.addChildEventListener(new ChildEventListener() {
-                                            @Override
-                                            public void onChildAdded(DataSnapshot langSnap, String s) {
-                                                Map<String, Object> lang = (Map<String, Object>) langSnap.getValue();
-                                                for (String el : langLearnList) {
-
-                                                    if (el.equals(langSnap.getKey()))
-                                                        ll += lang.get(getString(R.string.name)) + " ";
-
-                                                }
-                                                if (langSnap.getKey().equals(child.getKey())) {
-
-
-                                                    sl += lang.get(getString(R.string.name)).toString();
-
-                                                    item.setknownLang(sl);
-                                                    item.setSpeakLang(ll);
-                                                    rowItems.add(item);
-                                                    listView.invalidateViews();
-
-                                                }
-
-                                            }
-
-                                            @Override
-                                            public void onChildChanged(DataSnapshot langSnap, String s) {
-
-
-                                            }
-
-                                            @Override
-                                            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                                            }
-
-                                            @Override
-                                            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                                            }
-
-                                            @Override
-                                            public void onCancelled(FirebaseError firebaseError) {
-
-                                            }
-                                        });
-
-
-                                    }
-
-
-                            }
-                        }
-                    }
-                    else
-                        Toast.makeText(getApplicationContext(), getString(R.string.choose_language_try_again), Toast.LENGTH_SHORT).show();
-                */
 
                 }
 
@@ -321,6 +221,7 @@ public class FindTandemResult extends Activity implements AdapterView.OnItemClic
        startActivity(profile);
     }
 
+    //This method calculates the exact distance between two points and it returns the number depending on the unit
     private double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
         double theta = lon1 - lon2;
         double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));

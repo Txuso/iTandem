@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
  * Created by josurubio on 21/04/15.
  */
 public  class imageManager {
+
+    //It provides methods to scale pictures and transform Bitmap --> String and from String --> Bitmap
     public static String encodeTobase64(Bitmap image)
     {
         Bitmap immagex=image;
@@ -36,7 +38,6 @@ public  class imageManager {
         float scaleWidth = ((float) newWidth) / width;
         float scaleHeight = ((float) newHeight) / height;
         Matrix matrix = new Matrix();
-// RESIZE THE BIT MAP
         matrix.postScale(scaleWidth, scaleHeight);
         // RECREATE THE NEW BITMAP
         Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height,

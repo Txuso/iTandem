@@ -53,11 +53,8 @@ public class LoginActivity extends Activity{
         public void call(Session session, SessionState state,
                          Exception exception) {
             onFacebookSessionStateChange(session, state, exception);
-
         }
     };
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,14 +100,10 @@ public class LoginActivity extends Activity{
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
-
-
             }
         });
 
-
     }
-
 
     /* Handle any changes to the Facebook session */
     private void onFacebookSessionStateChange(final Session session, SessionState state, Exception exception) {

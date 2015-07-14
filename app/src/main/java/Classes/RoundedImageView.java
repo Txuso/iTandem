@@ -16,6 +16,8 @@ import android.widget.ImageView;
 /**
  * Created by josu on 06/07/15.
  */
+
+// This class provides some methods to transform the shape of the pictures
 public class RoundedImageView extends ImageView {
 
     public RoundedImageView(Context context) {

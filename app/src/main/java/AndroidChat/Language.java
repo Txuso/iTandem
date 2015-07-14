@@ -9,12 +9,6 @@ public class Language {
     private String izena;
     private String nombre;
 
-    public Language(){
-        this.izena = "";
-        this.name = "";
-        this.nombre = "";
-    }
-
     public Language(String name, String izena, String nombre){
         this.name = name;
         this.izena = izena;

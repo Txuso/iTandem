@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 
 /**
  * Created by josurubio on 08/04/15.
+ * Class to manage tandem list items
  */
 public class TandemListRowItem {
 

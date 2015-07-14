@@ -41,8 +41,6 @@ public class MyTandemPreferences extends Activity {
     Geocoder gc;
     GPSTracker gps;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

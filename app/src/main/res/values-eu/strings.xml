@@ -61,6 +61,10 @@
     <string name="repeated_encounter">Badaukazu jada topaketa pertsona honekin: </string>
     <string name="number_of_members">PARTAIDEAK</string>
 
+    <string name="empty_fields_notification">Zelai batzuk utsik daude. Hauek egiaztatu eta berriz saiatu</string>
+    <string name="new_message_notification">Mezu berri bat duzu - </string>
+    <string name="new_message_click_notification">"Klik egin mezua ikusteko"</string>
+
 
 
 
