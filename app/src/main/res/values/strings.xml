@@ -93,6 +93,8 @@
     <string name="empty_fields_notification">There are empty fields. Check them and try again</string>
     <string name="new_message_notification">You have a new Tandem Message from </string>
     <string name="new_message_click_notification">"Click here to see the message"</string>
+    <string name="delete_chat">"Delete Chat"</string>
+
 
 
 </resources>

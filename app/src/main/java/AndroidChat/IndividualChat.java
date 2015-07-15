@@ -9,6 +9,13 @@ public class IndividualChat extends Chat {
     private String receptor;
     private boolean position;
 
+    public IndividualChat (){
+        super();
+        this.receptorID = "";
+        this.receptor = "";
+        this.position = false;
+
+    }
     public IndividualChat(String message, String author, String receptor, String authorID, String receptorID, boolean position, String date) {
         super(message,author, authorID, date);
         this.receptorID = receptorID;

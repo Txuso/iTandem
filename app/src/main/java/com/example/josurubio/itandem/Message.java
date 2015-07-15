@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.v7.internal.widget.AdapterViewCompat;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,6 +36,8 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
     Bitmap pic;
     String id = "";
     Firebase myFirebaseRef;
+    int position = 0;
+    CustomTandemListViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,9 +126,10 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
         });
 
         listView = (ListView) findViewById(R.id.TandemEncounters);
-        CustomTandemListViewAdapter adapter = new CustomTandemListViewAdapter(this,
+        adapter = new CustomTandemListViewAdapter(this,
                 R.layout.tandem_list_item, rowItems);
         listView.setAdapter(adapter);
+        registerForContextMenu(listView);
         listView.setOnItemClickListener(this);
 
     }
@@ -149,6 +155,29 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onCreateContextMenu (ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.context_menu, menu);
+    }
+
+    public boolean onContextItemSelected (MenuItem item){
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        position = info.position;
+        switch (item.getItemId()){
+            case R.id.delete_conver:
+                myFirebaseRef.child("TandemEncounter").child(rowItems.get(position).getId()).removeValue();
+                myFirebaseRef.child("IndividualChat").child(rowItems.get(position).getId()).removeValue();
+                adapter.remove(adapter.getItem(position));
+                adapter.notifyDataSetChanged();
+                return true;
+            default: return super.onContextItemSelected(item);
+
+        }
+
     }
 
     @Override

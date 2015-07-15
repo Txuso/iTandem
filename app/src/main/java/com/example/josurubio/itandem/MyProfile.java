@@ -84,8 +84,10 @@ public class MyProfile extends Activity {
         languagesRef = new Firebase("https://blazing-fire-2203.firebaseio.com/Language");
 
         Firebase newTandRef = mFirebaseRef.push();
-        //TandemUser tandemUser1 = new TandemUser("Ander", 25, imaggg,langKnownArray,langLearnArray, "kln", "-2.5037039", "43.1873519", 50, "");
-        //newTandRef.setValue(tandemUser1);
+        Bitmap bmm = BitmapFactory.decodeResource(getResources(), R.drawable.profileimage);
+        String imm = imageManager.encodeTobase64(bmm);
+        TandemUser tandemUser1 = new TandemUser("Ander", 25, imm,langKnown,langKnown, "kln", "-2.5037039", "43.1873519", 50, "");
+        newTandRef.setValue(tandemUser1);
         final String newID = newTandRef.getKey();
 
 

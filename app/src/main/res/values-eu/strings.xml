@@ -64,8 +64,6 @@
     <string name="empty_fields_notification">Zelai batzuk utsik daude. Hauek egiaztatu eta berriz saiatu</string>
     <string name="new_message_notification">Mezu berri bat duzu - </string>
     <string name="new_message_click_notification">"Klik egin mezua ikusteko"</string>
-
-
-
+    <string name="delete_chat">"Chata Ezabatu"</string>
 
 </resources>

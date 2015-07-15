@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -33,8 +34,8 @@ public class FindTandemPlace extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     Geocoder gc;
-    Double longitude = 0.0;
-    Double latitude = 0.0;
+    Double longitude;
+    Double latitude;
     Firebase tandemPlaceRef;
     TextView title;
     TextView description;
@@ -54,7 +55,8 @@ public class FindTandemPlace extends FragmentActivity {
         setUpMapIfNeeded();
         Firebase.setAndroidContext(this);
         newUser = new HashMap<String, Boolean>();
-
+        longitude = 0.0;
+        latitude = 0.0;
 
         gc = new Geocoder(getApplicationContext());
         Button goB = (Button) findViewById(R.id.goButton2);
@@ -83,13 +85,11 @@ public class FindTandemPlace extends FragmentActivity {
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                             Map<String, Object> tp = (Map<String, Object>) dataSnapshot.getValue();
-                            Double latitude2 = (Double) tp.get("latitude");
-                            Double longitude2 = (Double) tp.get("longitude");
-                            float[] dist = new float[1];
+                            Double latitude2 = Double.parseDouble(tp.get("latitude").toString());
+                            Double longitude2 = Double.parseDouble(tp.get("longitude").toString());
 
-                            Location.distanceBetween(latitude, longitude, latitude2, longitude2, dist);
                             //Here we check if the distance between the loged user and the found user is less than the discovery preferences criteria
-                            if (dist[0] / 1000 <= 30) {
+                            if (distance(latitude,longitude, latitude2, longitude2, 'K') <= 30) {
 
                                 mMap.addMarker(new MarkerOptions().position(new LatLng(latitude2, longitude2)).title(tp.get("title").toString()));
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 12.0f));
@@ -232,5 +232,34 @@ public class FindTandemPlace extends FragmentActivity {
      */
     private void setUpMap() {
 
+    }
+
+    //This method calculates the exact distance between two points and it returns the number depending on the unit
+    private double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
+        double theta = lon1 - lon2;
+        double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
+        dist = Math.acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515;
+        if (unit == 'K') {
+            dist = dist * 1.609344;
+        } else if (unit == 'N') {
+            dist = dist * 0.8684;
+        }
+        return (dist);
+    }
+
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    /*::  This function converts decimal degrees to radians             :*/
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    private double deg2rad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    /*::  This function converts radians to decimal degrees             :*/
+    /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+    private double rad2deg(double rad) {
+        return (rad * 180.0 / Math.PI);
     }
 }

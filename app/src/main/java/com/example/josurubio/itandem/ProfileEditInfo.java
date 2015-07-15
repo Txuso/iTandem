@@ -119,7 +119,7 @@ public class ProfileEditInfo extends Activity{
                         tandemRef.child("Tandem").child(extras.getString("id")).child("langKnown").removeValue();
                         checkLanguages(tandemRef,extras.getString("id"), 0);
                         tandemRef.child("Tandem").child(newID).child("langKnown").removeValue();
-                       // checkLanguages2(tandemRef,newID, 0 );
+                        checkLanguages2(tandemRef,newID, 0 );
 
                     }break;
                     case 1:{
@@ -127,7 +127,7 @@ public class ProfileEditInfo extends Activity{
                         tandemRef.child("Tandem").child(extras.getString("id")).child("langLearn").removeValue();
                         checkLanguages(tandemRef,extras.getString("id"), 1);
                         tandemRef.child("Tandem").child(newID).child("langLearn").removeValue();
-                       // checkLanguages2(tandemRef,newID, 1);
+                        checkLanguages2(tandemRef,newID, 1);
 
                     }break;
                     case 2:

@@ -59,6 +59,7 @@
     <string name="empty_fields_notification">Hay campos vacíos. Compruébalos e inténtalo de nuevo</string>
     <string name="new_message_notification">Tienes un nuevo mensaje de </string>
     <string name="new_message_click_notification">"Haz click para verlo"</string>
+    <string name="delete_chat">"Eliminar Chat"</string>
 
 
 </resources>
