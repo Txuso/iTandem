@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import Classes.CustomTandemListViewAdapter;
+import Classes.RoundedImageView;
 import Classes.TandemListRowItem;
 import Classes.imageManager;
 
@@ -33,11 +34,11 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
     List<TandemListRowItem> rowItems;
     String from = "";
     String to = "";
-    Bitmap pic;
     String id = "";
     Firebase myFirebaseRef;
     int position = 0;
     CustomTandemListViewAdapter adapter;
+    TandemListRowItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,19 +53,23 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
         myFirebaseRef.child("TandemEncounter").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Map<String, Object> tandemEncounter = (Map<String, Object>) dataSnapshot.getValue();
+                final Map<String, Object> tandemEncounter = (Map<String, Object>) dataSnapshot.getValue();
 
                 if (tandemEncounter.get("author").toString().equals(id)) {
                     from = tandemEncounter.get("author").toString();
                     to = tandemEncounter.get("receptor").toString();
-                    final TandemListRowItem item = new TandemListRowItem(null, tandemEncounter.get("receptorName").toString(), tandemEncounter.get("date").toString(), "", dataSnapshot.getKey());
 
-                    myFirebaseRef.child("Tandem").child(tandemEncounter.get("author").toString()).addValueEventListener(new ValueEventListener() {
+                    myFirebaseRef.child("Tandem").child(tandemEncounter.get("receptor").toString()).addValueEventListener(new ValueEventListener() {
                         @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            Map<String, Object> tandem = (Map<String, Object>) dataSnapshot.getValue();
-                            pic = imageManager.getResizedBitmap(imageManager.decodeBase64(tandem.get("image").toString()), 80, 80);
-                            BitmapDrawable ima = new BitmapDrawable(pic);
+                        public void onDataChange(DataSnapshot snapshot) {
+                            Map<String, Object> tandem = (Map<String, Object>) snapshot.getValue();
+
+                            Bitmap pic = imageManager.getResizedBitmap(imageManager.decodeBase64(tandem.get("image").toString()), 80, 80);
+                            Bitmap picRounded = RoundedImageView.getCroppedBitmap(pic, 300);
+                            BitmapDrawable ima = new BitmapDrawable(picRounded);
+                            item = new TandemListRowItem(ima, "", tandemEncounter.get("date").toString(), "", "");
+
+
 
                         }
 
@@ -73,6 +78,8 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
 
                         }
                     });
+                    Toast.makeText(getApplicationContext(), item.getnameAge() + "", Toast.LENGTH_SHORT).show();
+
 
                     rowItems.add(item);
                     listView.invalidateViews();
@@ -81,16 +88,18 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
                 else if (tandemEncounter.get("receptor").toString().equals(id)){
                     from = tandemEncounter.get("receptor").toString();
                     to = tandemEncounter.get("author").toString();
-                    final TandemListRowItem item = new TandemListRowItem(null, "", tandemEncounter.get("date").toString(), "", dataSnapshot.getKey());
+                    item = new TandemListRowItem(new BitmapDrawable(), "", tandemEncounter.get("date").toString(), "", dataSnapshot.getKey());
 
                     myFirebaseRef.child("Tandem").child(tandemEncounter.get("receptor").toString()).addValueEventListener(new ValueEventListener() {
                         @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            Map<String, Object> tandem = (Map<String, Object>) dataSnapshot.getValue();
-                            pic = imageManager.getResizedBitmap(imageManager.decodeBase64(tandem.get("image").toString()), 80, 80);
-                            BitmapDrawable ima = new BitmapDrawable(pic);
+                        public void onDataChange(DataSnapshot snapshot) {
+                            Map<String, Object> tandem = (Map<String, Object>) snapshot.getValue();
+                            Bitmap pic = imageManager.getResizedBitmap(imageManager.decodeBase64(tandem.get("image").toString()), 80, 80);
+                            Bitmap picRounded = RoundedImageView.getCroppedBitmap(pic, 300);
+                            BitmapDrawable ima = new BitmapDrawable(picRounded);
                             item.setnameAge(tandem.get("name").toString());
                             item.setImageId(ima);
+
 
                         }
 
@@ -99,6 +108,7 @@ public class Message extends Activity implements AdapterView.OnItemClickListener
 
                         }
                     });
+
                     rowItems.add(item);
                     listView.invalidateViews();
                 }

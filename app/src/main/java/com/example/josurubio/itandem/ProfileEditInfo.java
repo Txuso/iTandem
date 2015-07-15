@@ -148,16 +148,13 @@ public class ProfileEditInfo extends Activity{
 
         for (int j = 0; j < modelItems.length; j++){
             if (modelItems[j].getValue() == 1) {
-
-                languages.put(modelItems[j].getId(), true);
-
+                languages.put(modelItems[j].getName(), true);
                 if (action == 0) {
                    ref.child("Tandem").child(id).child("langKnown").setValue(languages);
                 }
                 else {
                     ref.child("Tandem").child(id).child("langLearn").setValue(languages);
                 }
-                lang += " " + modelItems[j].getName();
             }
         }
     }
@@ -168,7 +165,7 @@ public class ProfileEditInfo extends Activity{
 
         for (int j = 0; j < modelItems.length; j++){
             if (modelItems[j].getValue() == 0) {
-                languages.put(modelItems[j].getId(),true);
+                languages.put(modelItems[j].getName(),true);
                 if (action == 0) {
 
                     ref.child("Tandem").child(id).child("langKnown").setValue(languages);

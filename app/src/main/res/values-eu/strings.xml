@@ -25,12 +25,13 @@
     <string name="create_tandem_place">Tandem Lekua Sortu</string>
     <string name="find_tandem_place">Tandem Lekua Bilatu</string>
 
-    <string name="spanish">Gaztelera</string>
-    <string name="english">Ingelesa</string>
+    <string name="spanish">Español</string>
+    <string name="english">English</string>
     <string name="basque">Euskera</string>
-    <string name="italian">Italiera</string>
-    <string name="french">Frantsesa</string>
-    <string name="catalan">Catalana</string>
+    <string name="italian">Italiano</string>
+    <string name="french">Français</string>
+    <string name="catalan">Català</string>
+
     <string name="name">izena</string>
 
     <string name="I_speak">Hitz egiten dut: </string>

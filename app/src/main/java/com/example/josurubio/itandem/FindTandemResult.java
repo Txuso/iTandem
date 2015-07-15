@@ -69,82 +69,31 @@ public class FindTandemResult extends Activity implements AdapterView.OnItemClic
 
                         if (filters[0].equals(child.getKey())) {
                             Map<String, Object> user = (Map<String, Object>) snapshot.getValue();
-                            langLearnList = new ArrayList<String>();
 
-                            for (final DataSnapshot langLearn : snapshot.child("langLearn").getChildren()) {
-                                langLearnList.add(langLearn.getKey());
-
-                            }
                             double latitude2 = Double.parseDouble(user.get("latitude").toString());
                             double longitude2 = Double.parseDouble(user.get("longitude").toString());
-
-                            Bitmap pic = imageManager.getResizedBitmap(imageManager.decodeBase64(user.get("image").toString()), 80, 80);
-
-                            Bitmap picRounded = RoundedImageView.getCroppedBitmap(pic, 300);
-
-                            float[] dist = new float[1];
-
                             double distance = distance(latitude,longitude, latitude2, longitude2, 'K');
 
                             //Here we check if the distance between the loged user and the found user is less than the discovery preferences criteria
                                 if (distance <= distanceTandem) {
+                                    Bitmap pic = imageManager.getResizedBitmap(imageManager.decodeBase64(user.get("image").toString()), 80, 80);
+                                    Bitmap picRounded = RoundedImageView.getCroppedBitmap(pic, 300);
+                                    BitmapDrawable ima = new BitmapDrawable(getApplicationContext().getResources(), picRounded);
 
-                                    BitmapDrawable ima = new BitmapDrawable(picRounded);
                                     final TandemListRowItem item = new TandemListRowItem(ima, user.get("name") + " " + user.get("age"), sl, ll, snapshot.getKey());
+                                    item.setknownLang(item.getknownLang() + child.getKey() + " ");
 
-                                    languagesRef.addChildEventListener(new ChildEventListener() {
-                                        @Override
-                                        public void onChildAdded(DataSnapshot langSnap, String s) {
-                                            Map<String, Object> lang = (Map<String, Object>) langSnap.getValue();
-                                            for (String el : langLearnList) {
+                                    for (final DataSnapshot langLearn : snapshot.child("langLearn").getChildren()) {
+                                        item.setSpeakLang(item.getSpeakLang() + langLearn.getKey() + " ");
 
-                                                if (el.equals(langSnap.getKey())) {
-                                                    item.setSpeakLang(item.getSpeakLang() + lang.get(getString(R.string.name)) + " ");
-                                                    //ll += lang.get(getString(R.string.name)) + " ";
-
-                                                }
-
-                                            }
-                                            if (langSnap.getKey().equals(child.getKey())) {
-
-                                                item.setknownLang(item.getknownLang() + lang.get(getString(R.string.name)).toString() + " ");
-                                                rowItems.add(item);
-                                                listView.invalidateViews();
-
-                                            }
-
-                                        }
-
-                                        @Override
-                                        public void onChildChanged(DataSnapshot langSnap, String s) {
-
-
-                                        }
-
-                                        @Override
-                                        public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                                        }
-
-                                        @Override
-                                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                                        }
-
-                                        @Override
-                                        public void onCancelled(FirebaseError firebaseError) {
-
-                                        }
-                                    });
-
-
+                                    }
+                                    rowItems.add(item);
+                                    listView.invalidateViews();
                                 }
                             }
 
                         }
                     }
-
-
                     sl = getString(R.string.I_speak);
                     ll = getString(R.string.I_want_to_learn);
 

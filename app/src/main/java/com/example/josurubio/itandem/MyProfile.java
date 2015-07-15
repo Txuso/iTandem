@@ -128,7 +128,19 @@ public class MyProfile extends Activity {
                     extract.setText(extractNew);
 
                     langKnownText.setText("- ");
+
+                    for (final DataSnapshot hizk : dataSnapshot.child("langKnown").getChildren()) {
+
+                        langKnownText.setText(langKnownText.getText() + hizk.getKey() + ", ");
+                    }
+
                     speakLangText.setText("- ");
+
+                    for (final DataSnapshot hizk2 : dataSnapshot.child("langLearn").getChildren()) {
+
+                        speakLangText.setText(speakLangText.getText() + hizk2.getKey() + ", ");
+
+                    }
 
 
                 }
@@ -144,78 +156,16 @@ public class MyProfile extends Activity {
 
                     langKnownText.setText("- ");
 
-
                     for (final DataSnapshot hizk : dataSnapshot.child("langKnown").getChildren()) {
 
-                        languagesRef.addChildEventListener(new ChildEventListener() {
-                            @Override
-                            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                                Map<String, Object> lang = (Map<String, Object>) dataSnapshot.getValue();
-                                if (dataSnapshot.getKey().equals(hizk.getKey()) && !langKnownText.getText().toString().contains(lang.get(getString(R.string.name)).toString()))
-                                    langKnownText.setText(langKnownText.getText() + lang.get(getString(R.string.name)).toString() + ", ");
-                            }
-
-                            @Override
-                            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                                Map<String, Object> lang = (Map<String, Object>) dataSnapshot.getValue();
-                                if (dataSnapshot.getKey().equals(hizk.getKey()) && !langKnownText.getText().toString().contains(lang.get(getString(R.string.name)).toString()))
-                                    langKnownText.setText(langKnownText.getText() + lang.get(getString(R.string.name)).toString() + ", ");
-
-                            }
-
-                            @Override
-                            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                            }
-
-                            @Override
-                            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                            }
-
-                            @Override
-                            public void onCancelled(FirebaseError firebaseError) {
-
-                            }
-                        });
-
+                        langKnownText.setText(langKnownText.getText() + hizk.getKey() + ", ");
                     }
 
                     speakLangText.setText("- ");
 
                     for (final DataSnapshot hizk2 : dataSnapshot.child("langLearn").getChildren()) {
 
-                        languagesRef.addChildEventListener(new ChildEventListener() {
-                            @Override
-                            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                                Map<String, Object> lang2 = (Map<String, Object>) dataSnapshot.getValue();
-                                if (dataSnapshot.getKey().equals(hizk2.getKey()) && !speakLangText.getText().toString().contains(lang2.get(getString(R.string.name)).toString()))
-                                    speakLangText.setText(speakLangText.getText() + lang2.get(getString(R.string.name)).toString() + ", ");
-                            }
-
-                            @Override
-                            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                                Map<String, Object> lang2 = (Map<String, Object>) dataSnapshot.getValue();
-                                if (dataSnapshot.getKey().equals(hizk2.getKey()) && !speakLangText.getText().toString().contains(lang2.get(getString(R.string.name)).toString()))
-                                    speakLangText.setText(speakLangText.getText() + lang2.get(getString(R.string.name)).toString() + ", ");
-
-                            }
-
-                            @Override
-                            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                            }
-
-                            @Override
-                            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                            }
-
-                            @Override
-                            public void onCancelled(FirebaseError firebaseError) {
-
-                            }
-                        });
+                        speakLangText.setText(speakLangText.getText() + hizk2.getKey() + ", " );
 
                     }
 

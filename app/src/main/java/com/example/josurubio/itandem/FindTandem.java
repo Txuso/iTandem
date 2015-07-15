@@ -43,13 +43,12 @@ public class FindTandem extends Activity {
 
         ListView itemss = (ListView) findViewById(R.id.kakakaka);
 
-        modelItems[0] = new Model(getString(R.string.basque), 0, "");
-        modelItems[1] = new Model(getString(R.string.catalan), 0, "");
-        modelItems[2] = new Model(getString(R.string.english), 0, "");
-        modelItems[3] = new Model(getString(R.string.french), 0, "");
-        modelItems[4] = new Model(getString(R.string.italian), 0, "");
-        modelItems[5] = new Model(getString(R.string.spanish), 0, "");
-
+        modelItems[0] = new Model(getString(R.string.catalan), 0, "");
+        modelItems[1] = new Model(getString(R.string.english), 0, "");
+        modelItems[2] = new Model(getString(R.string.spanish), 0, "");
+        modelItems[3] = new Model(getString(R.string.basque), 0, "");
+        modelItems[4] = new Model(getString(R.string.french), 0, "");
+        modelItems[5] = new Model(getString(R.string.italian), 0, "");
 
         tandemRef.addChildEventListener(new ChildEventListener() {
             int i = 0;
@@ -95,9 +94,6 @@ public class FindTandem extends Activity {
 
                 }
 
-
-
-
             }
 
             @Override
@@ -128,8 +124,6 @@ public class FindTandem extends Activity {
             }
         });
 
-
-
         CustomAdapter adapter2 = new CustomAdapter(this, modelItems);
         itemss.setAdapter(adapter2);
 
@@ -148,7 +142,6 @@ public class FindTandem extends Activity {
                 result.putExtra("latitude", latitude+"");
                 result.putExtra("longitude", longitude+"");
 
-
                 startActivity(result);
             }
         });
@@ -162,7 +155,7 @@ public class FindTandem extends Activity {
         for (int j = 0; j < modelItems.length; j++){
 
             if (modelItems[j].getValue() == 1) {
-                filters[i] = modelItems[j].getId();
+                filters[i] = modelItems[j].getName();
                 i++;
             }
         }

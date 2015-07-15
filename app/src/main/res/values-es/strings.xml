@@ -27,11 +27,12 @@
     <string name="find_tandem_place">Buscar un Espacio Tandem</string>
 
     <string name="spanish">Español</string>
-    <string name="english">Inglés</string>
-    <string name="basque">Vasco</string>
+    <string name="english">English</string>
+    <string name="basque">Euskera</string>
     <string name="italian">Italiano</string>
-    <string name="french">Francés</string>
-    <string name="catalan">Catalán</string>
+    <string name="french">Français</string>
+    <string name="catalan">Català</string>
+
     <string name="name">nombre</string>
 
     <string name="I_speak">Hablo: </string>

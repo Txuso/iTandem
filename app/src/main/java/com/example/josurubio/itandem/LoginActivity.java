@@ -142,22 +142,22 @@ public class LoginActivity extends Activity{
                         //we put it as an extra data in the next activity
                         intent.putExtra("id", logedUserID);
 
-                        Language ing = new Language("English", "Ingelesa", "Inglés");
-                        Language eusk = new Language("Basque", "Euskera", "Vasco");
-                        Language esp = new Language("Spanish", "Gaztelania", "Español");
-                        Language frn = new Language("French", "Frantsesa", "Francés");
-                        Language it = new Language("Italian", "Italiera", "Italiano");
-                        Language cat = new Language("Catalan", "Katalan", "Catalán");
+                        Language ing = new Language("English");
+                        Language eusk = new Language("Euskera");
+                        Language esp = new Language("Español");
+                        Language frn = new Language("Français");
+                        Language it = new Language("Italiano");
+                        Language cat = new Language("Català");
 
                         Firebase f = new Firebase("https://blazing-fire-2203.firebaseio.com");
 
                         f.child("Language").removeValue();
-                        f.child("Language").push().setValue(eusk);
                         f.child("Language").push().setValue(cat);
                         f.child("Language").push().setValue(ing);
+                        f.child("Language").push().setValue(esp);
+                        f.child("Language").push().setValue(eusk);
                         f.child("Language").push().setValue(frn);
                         f.child("Language").push().setValue(it);
-                        f.child("Language").push().setValue(esp);
 
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);

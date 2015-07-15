@@ -53,12 +53,12 @@
     <string name="create_tandem_place">Create a Tandem Place</string>
     <string name="find_tandem_place">Find a Tandem Place</string>
 
-    <string name="spanish">Spanish</string>
+    <string name="spanish">Español</string>
     <string name="english">English</string>
-    <string name="basque">Basque</string>
-    <string name="italian">Italian</string>
-    <string name="french">French</string>
-    <string name="catalan">Catalan</string>
+    <string name="basque">Euskera</string>
+    <string name="italian">Italiano</string>
+    <string name="french">Français</string>
+    <string name="catalan">Català</string>
     <string name="name">name</string>
 
     <string name="I_speak">I speak: </string>
